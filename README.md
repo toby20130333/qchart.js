@@ -1,37 +1,73 @@
-# qcharts.js
+# QChart.js
 
 *QML bindings for Charts.js, a simple HTML5 Charts javascript library
- using the canvas element* - [chartjs.org](http://www.chartjs.org).
+ using the canvas element* -
+ [chartjs.org](http://www.chartjs.org).
 
-## Usage
-
-To give Chart.js a try, use the ``qmlscene`` tool that comes with any
-Qt5 installation.
+To give QChart.js a try, just clone this repository and use qmlscene.
 
     $ qmlscene QChartGallery.qml
 
-To use QCharts.js into your own Qt/QML application, add this
-repository as a submodule, within a ``jbQuick`` folder, inside your
-toplevel qml source dir. So, assuming your project's root folder
-contains a ``src`` folder for C++ code and a ``qml`` folder for QML
-code, proceed as follows.
+## Dependencies
 
-    $ cd /path/to/project/root/directory
+Qt >= 5.0.
+
+## Setup
+
+This shows how to integrate QChart.js as a submodule into your git project.
+
+    $ cd /path/to/project/root/
     $ mkdir -p qml/jbQuick
     $ git submodule add git://github.com/jwintz/qchart.js.git qml/jbQuick/Charts
-    $ git commit -a -m "Added QChart.js as a QML submodule."
+    $ git commit -a -m "Added QChart.js as a submodule."
 
-Now, when cloning your git project, do not forget to handle submodules.
+When cloning a repository with submodules, use:
 
     $ git clone git://your/project/repository.git
     $ git submodule init
     $ git submodule update
 
-Do not copy QChart.js sources in your project if you want to benefit
-from updates. Updating your local submodule, use the following
-command.
+To update your local submodule, use:
 
     $ git submodule update
+
+## Usage
+
+Assuming jbQuick is in your qml import path:
+
+    import jbQuick.Charts 1.0
+
+QChart.js qmldir provides:
+* ``Chart`` QML item inheriting ``Canvas``
+* ``Charts`` Javascript library
+
+In addition, ``Chart`` provides the following properties:
+* ``chartAnimated``: whether chart data should be animated on initialization
+* ``chartAnimationEasing``: an easing type enumeration provided to a PropertyAnimation
+* ``chartAnimationDuration``: the length (ms) of the animation
+* ``chartData``: a javascript construct of the data set, see Chart.js documentation
+* ``chartType``: a value amongst:
+  * ``Charts.chartType.BAR`` for a bar chart
+  * ``Charts.chartType.DOUGHNUT`` for a doughnut chart
+  * ``Charts.chartType.LINE`` for a line chart
+  * ``Charts.chartType.PIE`` for a pie chart
+  * ``Charts.chartType.POLAR`` for a polar chart
+  * ``Charts.chartType.RADAR`` for a radar chart
+
+The following snippet creates a line chart.
+
+    Chart {
+      id: chart_line;
+      width: 400;
+      height: 400;
+      chartAnimated: true;
+      chartAnimationEasing: Easing.InOutElastic;
+      chartAnimationDuration: 2000;
+      chartType: Charts.ChartType.LINE;
+      Component.onCompleted: {
+          chartData = ...;
+      }
+    }
 
 ## Documentation
 
