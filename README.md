@@ -14,7 +14,7 @@ Qt >= 5.0.
 
 ## Setup
 
-This shows how to integrate QChart.js as a submodule into your git project.
+This shows how to integrate QChart.js as a ``jbQuick.Charts`` submodule into your git project.
 
     $ cd /path/to/project/root/
     $ mkdir -p qml/jbQuick
@@ -33,7 +33,7 @@ To update your local submodule, use:
 
 ## Usage
 
-Assuming jbQuick is in your qml import path:
+Assuming ``jbQuick`` is in your qml import path:
 
 ```QML
 import jbQuick.Charts 1.0
