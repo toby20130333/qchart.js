@@ -35,7 +35,9 @@ To update your local submodule, use:
 
 Assuming jbQuick is in your qml import path:
 
-    import jbQuick.Charts 1.0
+```QML
+import jbQuick.Charts 1.0
+```
 
 QChart.js qmldir provides:
 * ``Chart`` QML item inheriting ``Canvas``
