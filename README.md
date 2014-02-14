@@ -56,18 +56,20 @@ In addition, ``Chart`` provides the following properties:
 
 The following snippet creates a line chart.
 
-    Chart {
-      id: chart_line;
-      width: 400;
-      height: 400;
-      chartAnimated: true;
-      chartAnimationEasing: Easing.InOutElastic;
-      chartAnimationDuration: 2000;
-      chartType: Charts.ChartType.LINE;
-      Component.onCompleted: {
-          chartData = ...;
-      }
-    }
+```QML
+Chart {
+  id: chart_line;
+  width: 400;
+  height: 400;
+  chartAnimated: true;
+  chartAnimationEasing: Easing.InOutElastic;
+  chartAnimationDuration: 2000;
+  chartType: Charts.ChartType.LINE;
+  Component.onCompleted: {
+      chartData = ...;
+  }
+}
+```
 
 ## Documentation
 
