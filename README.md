@@ -6,7 +6,9 @@
 
 To give QChart.js a try, just clone this repository and use qmlscene.
 
-    $ qmlscene QChartGallery.qml
+```Shell
+$ qmlscene QChartGallery.qml
+```
 
 ## Dependencies
 
@@ -16,20 +18,26 @@ Qt >= 5.0.
 
 This shows how to integrate QChart.js as a ``jbQuick.Charts`` submodule into your git project.
 
-    $ cd /path/to/project/root/
-    $ mkdir -p qml/jbQuick
-    $ git submodule add git://github.com/jwintz/qchart.js.git qml/jbQuick/Charts
-    $ git commit -a -m "Added QChart.js as a submodule."
+```Shell
+$ cd /path/to/project/root/
+$ mkdir -p qml/jbQuick
+$ git submodule add git://github.com/jwintz/qchart.js.git qml/jbQuick/Charts
+$ git commit -a -m "Added QChart.js as a submodule."
+```
 
 When cloning a repository with submodules, use:
 
-    $ git clone git://your/project/repository.git
-    $ git submodule init
-    $ git submodule update
+```Shell
+$ git clone git://your/project/repository.git
+$ git submodule init
+$ git submodule update
+```
 
 To update your local submodule, use:
 
-    $ git submodule update
+```Shell
+$ git submodule update
+```
 
 ## Usage
 
