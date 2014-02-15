@@ -10,6 +10,8 @@ To give QChart.js a try, just clone this repository and use qmlscene.
 $ qmlscene QChartGallery.qml
 ```
 
+![Screenshot](http://jwintz.me/images/qchart.png)
+
 ## Dependencies
 
 Qt >= 5.0.
